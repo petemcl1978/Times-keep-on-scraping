@@ -110,4 +110,4 @@ app.get("/note/:id", function(req, res) {
 	Article.findById(id).populate("note").exec(function(err, data) {
 		res.send(data.note);
 	})
-}) 
+})})
