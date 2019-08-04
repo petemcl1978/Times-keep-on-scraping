@@ -69,13 +69,13 @@ if (process.env.MONGODB_URI) {
 
  app.post("/search" , function(req, res) {
      console.long(req.body.search);
-     Article.find {$text: {$search: req.body.search, $caseSensitive: false}}, null, {sort: {created: -1}}, function(err,data) {
+     Article.find; {$text: {$search: req.body.search, $caseSensitive, false}}; null, {sort: {created: -1}}, function(err,data) {
          console.long(data);
          if (data.length === 0) {
              res.render("search", {search: data})
          }
-     })
- });
+     
+    };
 
  app.post("/save/:id", function(req, res) {
 	Article.findById(req.params.id, function(err, data) {
